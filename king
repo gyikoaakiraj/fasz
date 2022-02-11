@@ -1,0 +1,26 @@
+import random
+porgetesek=[]
+osszeg=0
+db=0
+for i in range(20):
+    szam=random.randint(0,36)
+    osszeg+=szam
+    if szam%5==0:
+        db+=1
+    porgetesek.append(szam)
+    print(f"{szam}", end=", ")
+print(f"\nA pörgetett számok átlaga: {osszeg/len(porgetesek)}")
+print(f"AZ 5-tel oszthatók száma: {db}")
+
+while i<len(porgetesek) and porgetesek[i]!=18:
+    i+=1
+if i<len(porgetesek):
+    print("Szerepel a 18 a pörgetett számok között.")
+else:
+    print("Nem szerepel a 18 a pörgetett számok között.")
+
+max=0
+for i in range(1, 20):
+    if porgetesek[i]>porgetesek[max]:
+        max=i
+print(f"{porgetesek[max]} volt a legnagyobb dobás és ezt {max+1}. helyen dobtuk.")
